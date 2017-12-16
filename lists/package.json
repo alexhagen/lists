@@ -1,0 +1,60 @@
+{
+  "name": "lists",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "android": "react-native start",
+    "android:build": "node script/build.android.js && react-native run-android",
+    "android:build:app": "cd android && (./gradlew assembleRelease || gradlew assembleRelease)",
+    "android:clean": "node script/clean.android.js",
+    "ios": "react-native start",
+    "ios:build": "node script/build.ios.js && react-native run-ios",
+    "ios:clean": "node script/clean.ios.js",
+    "web": "npm run web:build:vendor-dev && cross-env NODE_ENV=development webpack-dev-server -d --host 0.0.0.0 --port 3000 --config web/webpack.config.js --inline --hot --colors",
+    "web:build": "npm run web:build:vendor && npm run web:build:app",
+    "web:build:app": "node script/build.app.web.js && cross-env NODE_ENV=production webpack --config web/webpack.config.js",
+    "web:build:vendor-dev": "node script/build.vendor-dev.web.js && cross-env NODE_ENV=development webpack --config web/vendor.webpack.config.js || node script/build.vendor-dev.web.js",
+    "web:build:vendor": "node script/build.vendor.web.js && cross-env NODE_ENV=production webpack --config web/vendor.webpack.config.js",
+    "web:clean": "node script/clean.web.js",
+    "web:serve": "http-serve -p 3001 --gzip true ./web/build",
+    "desktop": "node script/run.desktop.js",
+    "desktop:build": "npm run web:build && node script/build.desktop.js"
+  },
+  "dependencies": {
+    "react": "16.0.0-alpha.6",
+    "react-native": "0.43.4",
+    "react-dom": "^15.4.2",
+    "react-native-web": "^0.0.88",
+    "electron": "^1.6.11"
+  },
+  "devDependencies": {
+    "babel-jest": "19.0.0",
+    "jest": "19.0.2",
+    "babel-preset-react-native": "1.9.1",
+    "cross-env": "^5.0.2",
+    "react-test-renderer": "16.0.0-alpha.6",
+    "rimraf": "^2.6.1",
+    "add-asset-html-webpack-plugin": "^2.0.1",
+    "babel-loader": "^7.0.0",
+    "compression-webpack-plugin": "^0.4.0",
+    "copy-webpack-plugin": "^4.0.1",
+    "html-webpack-plugin": "^2.28.0",
+    "http-serve": "^1.0.1",
+    "json-loader": "^0.5.4",
+    "offline-plugin": "^4.7.0",
+    "react-hot-loader": "^1.3.1",
+    "url-loader": "^0.5.8",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.2",
+    "electron-packager": "^8.7.2",
+    "ncp": "^2.0.0"
+  },
+  "jest": {
+    "preset": "react-native",
+    "moduleNameMapper": {
+      "react-native": "<rootDir>/../"
+    }
+  },
+  "main": "index.desktop.js"
+}
