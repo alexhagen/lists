@@ -5,9 +5,8 @@
 1. Daily View - without mantra
   2. Portrait
     3. List of all to do today - 90% of screen
-    4.
+    4. ..
   3. Landscape
-
 2. Daily View - with mantra
   3. Portrait
     3. Mantra - 10% of screen
