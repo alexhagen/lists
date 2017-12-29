@@ -2,6 +2,8 @@
 
 ## Feature plan
 
+Use git gist as database?
+
 1. Daily View - without mantra
   2. Portrait
     3. List of all to do today - 90% of screen
