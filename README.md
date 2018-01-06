@@ -1,5 +1,7 @@
 # lists
 
+Possible name: YATL or YATA (yet another to do list)
+
 ## Feature plan
 
 Use git gist as database?
@@ -35,5 +37,6 @@ Use git gist as database?
 
 ## Upcoming Features and Inspiration
 
+- [https://github.com/bukinoshita/taskr](https://github.com/bukinoshita/taskr)
 - [https://github.com/gitim/react-native-sortable-list](https://github.com/gitim/react-native-sortable-list)
 - [https://github.com/deanmcpherson/react-native-sortable-listview](https://github.com/deanmcpherson/react-native-sortable-listview)
